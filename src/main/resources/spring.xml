@@ -1,13 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="
  		http://www.springframework.org/schema/beans
  		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
- 		http://www.springframework.org/schema/context
- 		http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+        http://www.springframework.org/schema/util
+ 		http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
-    <context:component-scan base-package="spring"/>
+    <import resource="loggers.xml"/>
+
+
+
+    <bean id="app" class="spring.core.App" >
+        <property name="event" ref="event"/>
+        <constructor-arg ref="client"/>
+        <constructor-arg ref="eventLogger"/>
+        <constructor-arg ref="loggerMap"/>
+    </bean>
+
+    <bean id="client" class="spring.core.beans.Client"
+          p:greeting ="${greeting}">
+        <constructor-arg name="id" value="${client.id}"/>
+        <constructor-arg name="fullName" value="${client.name}"/>
+    </bean>
+
+    <bean id="dateFormat"
+    class="java.text.DateFormat"
+    factory-method="getDateTimeInstance"/>
+
+    <bean id="event" class="spring.core.beans.Event" scope = "prototype">
+        <constructor-arg>
+            <bean class="java.util.Date"/>
+        </constructor-arg>
+        <constructor-arg ref="dateFormat"/>
+    </bean>
+
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:client.properties</value>
+                <value>classpath:event.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="true"/>
+    </bean>
+
+<!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+<!--        <property name="locations">-->
+<!--            <list>-->
+<!--                <value>classpath:client.properties</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--        <property name="ignoreResourceNotFound" value="true" />-->
+<!--        <property name="systemPropertiesMode">-->
+<!--            <util:constant-->
+<!--                    static-field="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer.SYSTEM_PROPERTIES_MODE_OVERRIDE" />-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    <util:properties id="clientProps" location="classpath:client.properties"/>-->
+
+    <util:map id="loggerMap" map-class="java.util.TreeMap">
+        <entry key="INFO"
+               value-ref="eventLogger"/>
+        <entry key="ERROR"
+               value-ref="combinedEventLogger"/>
+    </util:map>
+
+    <bean id="monitor" class="spring.core.interfaces.Monitor"/>
+    <bean id="awared" class="spring.core.interfaces.AwareBean" init-method="init"/>
 
 </beans>

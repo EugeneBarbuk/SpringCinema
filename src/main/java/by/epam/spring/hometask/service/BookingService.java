@@ -1,4 +1,4 @@
-package ua.epam.spring.hometask.service;
+package by.epam.spring.hometask.service;
 
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -6,9 +6,9 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import ua.epam.spring.hometask.domain.Event;
-import ua.epam.spring.hometask.domain.Ticket;
-import ua.epam.spring.hometask.domain.User;
+import by.epam.spring.hometask.domain.Event;
+import by.epam.spring.hometask.domain.User;
+import by.epam.spring.hometask.domain.Ticket;
 
 /**
  * @author Yuriy_Tkach
@@ -31,7 +31,7 @@ public interface BookingService {
      * @return total price
      */
     public double getTicketsPrice(@Nonnull Event event, @Nonnull LocalDateTime dateTime, @Nullable User user,
-            @Nonnull Set<Long> seats);
+                                  @Nonnull Set<Long> seats);
 
     /**
      * Books tickets in internal system. If user is not

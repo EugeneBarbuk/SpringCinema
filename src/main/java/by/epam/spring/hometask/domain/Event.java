@@ -1,4 +1,4 @@
-package ua.epam.spring.hometask.domain;
+package by.epam.spring.hometask.domain;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -196,13 +196,8 @@ public class Event extends DomainObject {
         }
         Event other = (Event) obj;
         if (name == null) {
-            if (other.name != null) {
-                return false;
-            }
-        } else if (!name.equals(other.name)) {
-            return false;
-        }
-        return true;
+            return other.name == null;
+        } else return name.equals(other.name);
     }
 
 }

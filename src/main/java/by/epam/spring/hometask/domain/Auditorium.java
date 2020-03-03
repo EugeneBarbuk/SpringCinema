@@ -1,4 +1,4 @@
-package ua.epam.spring.hometask.domain;
+package by.epam.spring.hometask.domain;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -10,7 +10,7 @@ import java.util.stream.LongStream;
 /**
  * @author Yuriy_Tkach
  */
-public class Auditorium {
+public class Auditorium extends DomainObject {
 
     private String name;
 
@@ -78,13 +78,8 @@ public class Auditorium {
         }
         Auditorium other = (Auditorium) obj;
         if (name == null) {
-            if (other.name != null) {
-                return false;
-            }
-        } else if (!name.equals(other.name)) {
-            return false;
-        }
-        return true;
+            return other.name == null;
+        } else return name.equals(other.name);
     }
 
 }
