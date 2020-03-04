@@ -1,33 +1,42 @@
 package by.epam.spring.hometask.dao.user;
 
-import by.epam.spring.hometask.domain.DomainObject;
 import by.epam.spring.hometask.domain.User;
+import by.epam.spring.hometask.service.UserService;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.Collection;
 
-public class UserDaoSqlImpl implements UserDao {
+/**
+ * Mock class for future actions
+ */
+
+public class UserDaoSqlImpl implements UserService {
+
+    @Nullable
     @Override
-    public User getUserByEmail(String email) {
+    public User getUserByEmail(@Nonnull String email) {
         return null;
     }
 
     @Override
-    public Long getById(Long id) {
-        return id;
-    }
-
-    @Override
-    public DomainObject add(DomainObject object) {
+    public User save(@Nonnull User object) {
         return null;
     }
 
     @Override
-    public void remove(DomainObject object) {
+    public void remove(@Nonnull User object) {
 
     }
 
     @Override
-    public Collection getAll() {
+    public User getById(@Nonnull Long id) {
+        return null;
+    }
+
+    @Nonnull
+    @Override
+    public Collection<User> getAll() {
         return null;
     }
 }

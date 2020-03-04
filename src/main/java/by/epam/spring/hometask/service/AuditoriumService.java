@@ -6,18 +6,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import by.epam.spring.hometask.domain.Auditorium;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * @author Yuriy_Tkach
  */
-public interface AuditoriumService {
-
-    /**
-     * Getting all auditoriums from the system
-     * 
-     * @return set of all auditoriums
-     */
-    public @Nonnull Set<Auditorium> getAll();
+public interface AuditoriumService extends JpaRepository {
 
     /**
      * Finding auditorium by name
