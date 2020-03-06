@@ -21,5 +21,7 @@ public interface AuditoriumService extends JpaRepository {
      * @return found auditorium or <code>null</code>
      */
     public @Nullable Auditorium getByName(@Nonnull String name);
+    //aasdfasd
+    ///lkajsd
 
 }
