@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:/data/users/users.xml"/>
+    <import resource="classpath:/data/events/events.xml"/>
+
+    <bean id="ticketRepositoryImpl" class="by.barbuk.epam.spring.hometask.service.implementation.dao.ticket.TicketStorage">
+        <constructor-arg>
+            <map>
+                <entry key="1" value-ref="ticket">
+<!--                    <bean class="by.barbuk.epam.spring.hometask.domain.Ticket">-->
+<!--                        <constructor-arg value="7"/>-->
+<!--                        <constructor-arg ref="user_2"/>-->
+<!--                        <constructor-arg ref="winterParty"/>-->
+<!--                    </bean>-->
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+</beans>

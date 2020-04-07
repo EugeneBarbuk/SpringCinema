@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="
+ 		    http://www.springframework.org/schema/beans
+ 		    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="testUser" class="by.barbuk.epam.spring.hometask.domain.User" scope="prototype"
+          c:id="3"
+          c:firstName="Guy"
+          c:lastName="Fawkes"
+          c:email="Anonimus@epam.com"
+    />
+
+    <bean id="testEvent" class="by.barbuk.epam.spring.hometask.domain.Event" scope="prototype"
+          c:id="3"
+          c:name="TestEvent"
+          c:basePrice="1.1"
+          c:rating="HIGH"
+    />
+
+    <bean id="testAuditorium" class="by.barbuk.epam.spring.hometask.domain.Auditorium" scope="prototype"
+          c:id="3"
+          c:name="TestAuditorium"
+          c:numberOfSeats="15">
+        <constructor-arg>
+            <value type="java.lang.String[]"></value>
+        </constructor-arg>
+    </bean>
+
+</beans>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:/data/users/users.xml"/>
+
+    <bean id="userRepositoryImpl" class="by.barbuk.epam.spring.hometask.service.implementation.dao.user.UserStorage">
+        <constructor-arg>
+            <map>
+                <entry key="1" value-ref="user_1"/>
+                <entry key="2" value-ref="user_2"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+</beans>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user_1" class="by.barbuk.epam.spring.hometask.domain.User" scope="prototype"
+          c:id="${user_1.id}"
+          c:firstName="${user_1.firstName}"
+          c:lastName="${user_1.lastName}"
+          c:email="${user_1.email}"
+    />
+
+    <bean id="user_2" class="by.barbuk.epam.spring.hometask.domain.User" scope="prototype"
+          c:id="${user_2.id}"
+          c:firstName="${user_2.firstName}"
+          c:lastName="${user_2.lastName}"
+          c:email="${user_2.email}"
+    />
+
+</beans>

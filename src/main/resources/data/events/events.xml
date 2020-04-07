@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="summerParty" class="by.barbuk.epam.spring.hometask.domain.Event" scope="prototype"
+          c:id="${summerParty.id}"
+          c:name="${summerParty.name}"
+          c:basePrice="${summerParty.basePrice}"
+          c:rating="${summerParty.rating}"
+    />
+
+    <bean id="winterParty" class="by.barbuk.epam.spring.hometask.domain.Event" scope="prototype"
+          c:id="${winterParty.id}"
+          c:name="${winterParty.name}"
+          c:basePrice="${winterParty.basePrice}"
+          c:rating="${winterParty.rating}"
+        />
+
+        </beans>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="greenAuditorium" class="by.barbuk.epam.spring.hometask.domain.Auditorium" scope="prototype"
+          c:id="${greenAuditorium.id}"
+          c:name="${greenAuditorium.name}"
+          c:numberOfSeats="${greenAuditorium.numberOfSeats}"
+    >
+        <constructor-arg>
+            <value type="java.lang.String[]">${greenAuditorium.vipSeats}</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="redAuditorium" class="by.barbuk.epam.spring.hometask.domain.Auditorium" scope="prototype"
+          c:id="${redAuditorium.id}"
+          c:name="${redAuditorium.name}"
+          c:numberOfSeats="${redAuditorium.numberOfSeats}"
+    >
+        <constructor-arg>
+            <value type="java.lang.String[]">${redAuditorium.vipSeats}</value>
+        </constructor-arg>
+    </bean>
+
+</beans>

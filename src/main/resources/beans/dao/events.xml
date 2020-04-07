@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:/data/events/events.xml"/>
+
+    <bean id="eventRepositoryImpl" class="by.barbuk.epam.spring.hometask.service.implementation.dao.event.EventStorage">
+        <constructor-arg>
+            <map>
+                <entry key="1" value-ref="summerParty"/>
+                <entry key="2" value-ref="winterParty"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+</beans>
