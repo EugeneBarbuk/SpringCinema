@@ -1,8 +1,6 @@
 package by.barbuk.epam.spring.hometask.domain;
 
-
 import by.barbuk.epam.spring.hometask.BaseTest;
-import by.barbuk.epam.spring.hometask.domain.Event;
 import by.barbuk.epam.spring.hometask.service.EventService;
 import by.barbuk.epam.spring.hometask.service.implementation.dao.StorageEnum;
 import by.barbuk.epam.spring.hometask.service.implementation.dao.event.EventDaoFactory;

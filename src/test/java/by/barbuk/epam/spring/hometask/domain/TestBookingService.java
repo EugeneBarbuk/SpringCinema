@@ -1,10 +1,6 @@
-package by.barbuk.epam.spring.hometask.domain.unit;
+package by.barbuk.epam.spring.hometask.domain;
 
 import by.barbuk.epam.spring.hometask.BaseTest;
-import by.barbuk.epam.spring.hometask.domain.Auditorium;
-import by.barbuk.epam.spring.hometask.domain.Event;
-import by.barbuk.epam.spring.hometask.domain.Ticket;
-import by.barbuk.epam.spring.hometask.domain.User;
 import by.barbuk.epam.spring.hometask.service.AuditoriumService;
 import by.barbuk.epam.spring.hometask.service.BookingService;
 import by.barbuk.epam.spring.hometask.service.DiscountService;

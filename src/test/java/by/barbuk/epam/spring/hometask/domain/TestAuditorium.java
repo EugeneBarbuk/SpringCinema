@@ -1,7 +1,6 @@
 package by.barbuk.epam.spring.hometask.domain;
 
 import by.barbuk.epam.spring.hometask.BaseTest;
-import by.barbuk.epam.spring.hometask.domain.Auditorium;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
